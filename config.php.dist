@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'git' => 'git',
+    'token' => '<< PUT YOUR TOKEN HERE >>',
+    'branches' => [
+        'peesoft/yii' => [
+            'master' => '1.0',
+        ],
+        'peesoft/yii2' => [
+            'master' => '2.0',
+            '3.0'    => '3.0',
+        ],
+    ],
+    'subsplits' => [
+        'peesoft/yii2' => [
+            'framework' => [
+                'repo' => 'peesoft/yii-framework',
+                'treeFilter' => "jq '.name=\"peesoft/yii\" | .replace={\"peesoft/yii2\":\"self.version\"}' composer.json > c.j && mv c.j composer.json"
+            ],
+        ],
+        'peesoft/yii' => [
+            '/' => [
+                'repo' => 'peesoft/yii-framework',
+            ]
+        ]
+    ]
+];

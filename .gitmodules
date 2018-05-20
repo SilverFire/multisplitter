@@ -1,0 +1,3 @@
+[submodule "git-subsplit"]
+	path = git-subsplit
+	url = git@github.com:SilverFire/git-subsplit.git
